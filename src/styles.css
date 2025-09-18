@@ -21,9 +21,8 @@ button {
     padding: 0.25em 1em;
 }
 
-h1,
-h2 {
-    margin-bottom: 0.5em;
+section {
+    margin: 1em auto;
 }
 
 img {

@@ -1,4 +1,7 @@
-const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit eget
+const pageHeading = "Odin Restaurant";
+
+const sectionHeading = "Intro";
+const sectionText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit eget
                 eros id egestas. Nulla sed congue enim. Maecenas nisi odio, scelerisque vel
                 justo vel, accumsan faucibus odio. Nulla turpis libero, faucibus ut lorem
                 luctus, dignissim consectetur lorem. Phasellus dictum urna laoreet massa dapibus
@@ -11,14 +14,12 @@ const imgAlt = "Food platter";
 const imgAttribHref = "https://commons.wikimedia.org/wiki/File:Idafiun_food.jpg";
 const imgAttribName = "Idafiun";
 
-export function loadHomePage() {
-    const content = document.querySelector("#content");
-
+export function loadHomePage(content) {
     const container = document.createElement("div");
     container.classList.add("container");
 
     const h1 = document.createElement("h1");
-    h1.textContent = "Odin Restaurant";
+    h1.textContent = pageHeading;
     container.appendChild(h1);
 
     container.appendChild(section());
@@ -30,11 +31,11 @@ function section() {
     const section = document.createElement("section");
 
     const h2 = document.createElement("h2");
-    h2.textContent = "Intro";
+    h2.textContent = sectionHeading;
     section.appendChild(h2);
 
     const p = document.createElement("p");
-    p.textContent = lorem;
+    p.textContent = sectionText;
     section.appendChild(p);
 
     section.appendChild(image());
