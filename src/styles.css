@@ -1,3 +1,5 @@
+/* GLOBAL */
+
 *,
 *::before,
 *::after {
@@ -6,36 +8,79 @@
     padding: 0;
 }
 
+:root {
+    --color-grey-dark: #2d2d2d;
+    --color-purple: #2e003e;
+    --color-black: #1a1a1a;
+    --color-pink: #f04a92;
+    --color-turqoise: #00f6f6;
+    --color-green: #39f57c;
+    --color-grey-light: #c0c0c0;
+    --color-white: #d1d1d1;
+    --color-amber: #ffb300;
+    --color-shadow: #0006;
+}
+
 body {
     font-size: 20px;
-    background-color: lightgrey;
-}
-
-nav {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-button {
-    font: inherit;
-    padding: 0.25em 1em;
-}
-
-section {
-    margin: 1em auto;
-}
-
-img {
-    max-width: 100%;
-    margin-top: 1em;
-    border: 2px solid grey;
-    border-radius: 1em;
+    background-color: var(--color-grey-dark);
 }
 
 .container {
     max-width: 75ch;
     margin: 0 auto;
     padding: 1em;
+}
+
+/* HEADER */
+
+header {
+    background-color: var(--color-black);
+    border-bottom: 2px solid var(--color-pink);
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1em;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-turqoise);
+    text-shadow: 2px 2px 2px var(--color-pink);
+}
+
+.nav-btn {
+    background-color: var(--color-grey-dark);
+    border-color: var(--color-turqoise);
+    color: var(--color-grey-light);
+    font: inherit;
+    padding: 0.25em 1em;
+    box-shadow: 2px 2px 2px var(--color-pink);
+}
+
+/* BODY */
+
+.page-heading,
+.section-heading {
+    color: var(--color-white);
+    margin: 0.5em auto;
+}
+
+.section-text {
+    color: var(--color-grey-light);
+    margin-bottom: 1em;
+}
+
+/* IMAGES */
+
+img {
+    width: 100%;
+    border: 2px solid var(--color-turqoise);
+    box-shadow: 0px 0px 10px var(--color-pink);
+    border-radius: 1em;
 }
 
 .img-container {
@@ -47,7 +92,7 @@ img {
     bottom: 0.5em;
     right: 0.5em;
     padding: 0.25em;
-    color: white;
-    background-color: #6669;
+    color: var(--color-white);
+    background-color: var(--color-shadow);
     border-radius: 0.5em;
 }

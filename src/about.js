@@ -24,6 +24,7 @@ export function aboutPage() {
 
     const h1 = document.createElement("h1");
     h1.textContent = pageHeading;
+    h1.classList.add("page-heading");
     container.appendChild(h1);
 
     container.appendChild(section(aboutHeading, aboutItems));
@@ -38,6 +39,7 @@ function section(heading, items) {
 
     const h2 = document.createElement("h2");
     h2.textContent = heading;
+    h2.classList.add("section-heading");
     section.appendChild(h2);
 
     items.forEach((item) => {
@@ -46,24 +48,28 @@ function section(heading, items) {
         if (item.name) {
             const name = document.createElement("h3");
             name.textContent = item.name;
+            name.classList.add("section-heading");
             div.appendChild(name);
         }
 
         if (item.p1) {
             const p1 = document.createElement("p");
             p1.textContent = item.p1;
+            p1.classList.add("section-text");
             div.appendChild(p1);
         }
 
         if (item.p2) {
             const p2 = document.createElement("p");
             p2.textContent = item.p2;
+            p2.classList.add("section-text");
             div.appendChild(p2);
         }
 
         if (item.p3) {
             const p3 = document.createElement("p");
             p3.textContent = item.p3;
+            p3.classList.add("section-text");
             div.appendChild(p3);
         }
 
