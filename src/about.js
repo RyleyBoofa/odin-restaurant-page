@@ -13,8 +13,8 @@ const contactItems = [
     {
         name: "Suburb",
         p1: "3 Green Run, Washington",
-        p2: "Ph: 162 141171",
-        p3: "Ph: 147 165156",
+        p2: "Ph: 162 141 171",
+        p3: "Ph: 147 165 156",
     },
 ];
 

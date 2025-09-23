@@ -1,5 +1,8 @@
 /* GLOBAL */
 
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Special+Elite&display=swap');
+
 *,
 *::before,
 *::after {
@@ -9,6 +12,9 @@
 }
 
 :root {
+    --font-special-elite: "Special Elite", system-ui;
+    --font-chelsea-market: "Chelsea Market", system-ui;
+    
     --color-grey-dark: #2d2d2d;
     --color-purple: #2e003e;
     --color-black: #1a1a1a;
@@ -22,8 +28,15 @@
 }
 
 body {
+    font-family: var(--font-chelsea-market);
     font-size: 20px;
     background-color: var(--color-grey-dark);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-special-elite);
 }
 
 .container {
