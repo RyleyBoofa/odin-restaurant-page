@@ -3,32 +3,54 @@ const pageHeading = "Our Menu";
 const startersHeading = "Starters";
 const starterItems = [
     {
-        name: "Nachos",
-        desc: "Corn chips topped with melted cheese",
-        price: "$10",
+        name: "Jugger Nuggets",
+        desc: `Bite-sized power-ups that will give you the health boost you need. 
+                Crispy on the outside, juicy and tender on the inside — guaranteed 
+                to keep you fighting stronger, for longer.`,
+        price: "$12.50",
     },
     {
-        name: "Bruschetta",
-        desc: "Toasted bread slices topped with diced tomatoes",
-        price: "$8",
+        name: "Quick Refries",
+        desc: `Crispy golden fries that will pick you up when you're feeling down. 
+                Perfect for that second wind after a tough day.`,
+        price: "$10.00",
     },
 ];
 
 const mainsHeading = "Mains";
 const mainItems = [
     {
-        name: "Steak",
-        desc: "300gm Porterhouse, served with chips and salad",
-        price: "$35",
+        name: "PHD — Pretty Huge Dinner",
+        desc: `The ultimate survivor's feast — 
+                a towering plate stacked with burgers, fries, and other sides. 
+                So much food you'll be left feeling like you could explode.`,
+        price: "$25.00",
     },
     {
-        name: "Chicken Parma",
-        desc: "Crumbed chicken breast topped with tomato sauce and cheese, served with chips and salad",
-        price: "$30",
+        name: "Stamin-Sub",
+        desc: `A footlong sub packed with meats, cheese, and veggies. 
+                It doesn't just fill you up — it keeps you moving faster, for longer.`,
+        price: "$20.00",
     },
 ];
 
-export function loadMenuPage(content) {
+const drinksHeading = "Drinks";
+const drinkItems = [
+    {
+        name: "Double-Scoop Root Beer Float",
+        desc: `Classic root beer float stacked with two scoops of ice-cream. 
+                Sweet, creamy, and guaranteed to double your fun with every sip.`,
+        price: "Small $5.00 | Medium $8.00 | Large $10.00",
+    },
+    {
+        name: "Greed Cola",
+        desc: `Jumbo-sized glass of cola that will kick you into overdrive. 
+                The perfect drink to keep you locked-in for those long nights.`,
+        price: "$15.00",
+    },
+];
+
+export function menuPage() {
     const container = document.createElement("div");
     container.classList.add("container");
 
@@ -40,7 +62,9 @@ export function loadMenuPage(content) {
 
     container.appendChild(section(mainsHeading, mainItems));
 
-    content.appendChild(container);
+    container.appendChild(section(drinksHeading, drinkItems));
+
+    return container;
 }
 
 function section(heading, items) {

@@ -1,32 +1,20 @@
 import "./styles.css";
-import { loadHomePage } from "./home.js";
-import { loadMenuPage } from "./menu.js";
-import { loadAboutPage } from "./about.js";
+import { homePage } from "./home.js";
+import { menuPage } from "./menu.js";
+import { aboutPage } from "./about.js";
 
 const homeBtn = document.querySelector("#home");
 const menuBtn = document.querySelector("#menu");
 const aboutBtn = document.querySelector("#about");
 const content = document.querySelector("#content");
 
-homeBtn.addEventListener("click", () => {
-    clearContent();
-    loadHomePage(content);
-});
+homeBtn.addEventListener("click", () => loadPage(homePage));
+menuBtn.addEventListener("click", () => loadPage(menuPage));
+aboutBtn.addEventListener("click", () => loadPage(aboutPage));
 
-menuBtn.addEventListener("click", () => {
-    clearContent();
-    loadMenuPage(content);
-});
-
-aboutBtn.addEventListener("click", () => {
-    clearContent();
-    loadAboutPage(content);
-});
-
-function clearContent() {
-    Array.from(content.children).forEach((element) => {
-        element.remove();
-    });
+function loadPage(page) {
+    Array.from(content.children).forEach((element) => element.remove());
+    content.appendChild(page());
 }
 
-loadHomePage(content);
+loadPage(homePage);

@@ -1,20 +1,21 @@
-const pageHeading = "Odin Restaurant";
+const pageHeading = "Last Stop Diner";
 
-const sectionHeading = "Intro";
-const sectionText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit eget
-                eros id egestas. Nulla sed congue enim. Maecenas nisi odio, scelerisque vel
-                justo vel, accumsan faucibus odio. Nulla turpis libero, faucibus ut lorem
-                luctus, dignissim consectetur lorem. Phasellus dictum urna laoreet massa dapibus
-                aliquam. Mauris consequat rhoncus massa, sed bibendum neque rutrum sit amet.
-                Aenean enim ante, consectetur ut laoreet et, sodales ut neque. Phasellus ut odio
-                eros. Sed porttitor tortor et porta scelerisque.`;
+const sectionHeading = "Open 24 Hours";
+const sectionText = `Welcome to the Last Stop Diner — serving survivors since 2012! 
+                    Our cheerful undead staff are always ready with a smile and a 
+                    groan, while our loyal regulars keep the booths full. Hop aboard 
+                    the bus with our state-of-the-art robotic driver at the wheel, 
+                    and stop in for a hot meal, a warm coffee, and a little piece 
+                    of post-apocalyptic comfort.`;
 
-const imgSrc = "https://upload.wikimedia.org/wikipedia/commons/c/ca/Idafiun_food.jpg";
-const imgAlt = "Food platter";
-const imgAttribHref = "https://commons.wikimedia.org/wiki/File:Idafiun_food.jpg";
-const imgAttribName = "Idafiun";
+const imgSrc =
+    "https://i.redd.it/so-now-that-we-have-bo2-early-origins-dlc-5-maps-stuff-v0-e17ldrjoz29e1.jpg?width=1920&format=pjpg&auto=webp&s=70d105fd21bad48d2f1a8ebf536183ed3984c705";
+const imgAlt = "Tranzit Diner Placeholder Image";
+const imgAttribHref =
+    "https://www.reddit.com/r/CODZombies/comments/1hmc6md/so_now_that_we_have_bo2_early_origins_dlc_5_maps/";
+const imgAttribName = "r/DerpyBox";
 
-export function loadHomePage(content) {
+export function homePage() {
     const container = document.createElement("div");
     container.classList.add("container");
 
@@ -24,7 +25,7 @@ export function loadHomePage(content) {
 
     container.appendChild(section());
 
-    content.appendChild(container);
+    return container;
 }
 
 function section() {

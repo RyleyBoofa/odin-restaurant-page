@@ -1,15 +1,24 @@
 const pageHeading = "About Us";
 
+const aboutHeading = "The last stop before the end of the line";
+const aboutItems = [
+    {
+        p1: `Need a table, a take-out order, or just somewhere to lay-low for a while? 
+            Come visit us at the Last Stop Diner.`,
+    },
+];
+
 const contactHeading = "Contact Us";
 const contactItems = [
     {
         name: "Suburb",
-        p1: "123 Street St, Suburb",
-        p2: "1234 567 890",
+        p1: "3 Green Run, Washington",
+        p2: "Ph: 162 141171",
+        p3: "Ph: 147 165156",
     },
 ];
 
-export function loadAboutPage(content) {
+export function aboutPage() {
     const container = document.createElement("div");
     container.classList.add("container");
 
@@ -17,9 +26,11 @@ export function loadAboutPage(content) {
     h1.textContent = pageHeading;
     container.appendChild(h1);
 
+    container.appendChild(section(aboutHeading, aboutItems));
+
     container.appendChild(section(contactHeading, contactItems));
 
-    content.appendChild(container);
+    return container;
 }
 
 function section(heading, items) {
@@ -32,17 +43,29 @@ function section(heading, items) {
     items.forEach((item) => {
         const div = document.createElement("div");
 
-        const name = document.createElement("h3");
-        name.textContent = item.name;
-        div.appendChild(name);
+        if (item.name) {
+            const name = document.createElement("h3");
+            name.textContent = item.name;
+            div.appendChild(name);
+        }
 
-        const p1 = document.createElement("p");
-        p1.textContent = item.p1;
-        div.appendChild(p1);
+        if (item.p1) {
+            const p1 = document.createElement("p");
+            p1.textContent = item.p1;
+            div.appendChild(p1);
+        }
 
-        const p2 = document.createElement("p");
-        p2.textContent = item.p2;
-        div.appendChild(p2);
+        if (item.p2) {
+            const p2 = document.createElement("p");
+            p2.textContent = item.p2;
+            div.appendChild(p2);
+        }
+
+        if (item.p3) {
+            const p3 = document.createElement("p");
+            p3.textContent = item.p3;
+            div.appendChild(p3);
+        }
 
         section.appendChild(div);
     });
