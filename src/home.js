@@ -1,13 +1,8 @@
 const pageHeading = "Open 24 Hours";
 
 const sectionHeading = "Surving the Apocalype, One Meal at a Time";
-const sectionText = `Welcome to the Last Stop Diner — serving survivors since 2012!  
-                    Our cheerful undead staff are always ready with a smile (or a groan), 
-                    while our loyal regulars keep the booths full. Hop aboard the bus, 
-                    with our state-of-the-art robotic driver at the wheel, and stop in 
-                    for a hot meal, a warm coffee, and a little piece of post-apocalyptic 
-                    comfort. Whether you're on your last leg or just passing through, 
-                    we're here to help you refuel before your next adventure.`;
+const sectionText = `Need a table, a take-out order, or just somewhere to lay-low for a while? 
+                    Come visit us at the Last Stop Diner and enjoy our end of the world dining experience.`;
 
 const imgSrc =
     "https://i.redd.it/so-now-that-we-have-bo2-early-origins-dlc-5-maps-stuff-v0-e17ldrjoz29e1.jpg?width=1920&format=pjpg&auto=webp&s=70d105fd21bad48d2f1a8ebf536183ed3984c705";

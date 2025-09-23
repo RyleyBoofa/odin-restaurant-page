@@ -70,6 +70,7 @@ export function menuPage() {
 
 function section(heading, items) {
     const section = document.createElement("section");
+    section.classList.add("menu-section");
 
     const h2 = document.createElement("h2");
     h2.textContent = heading;
@@ -78,20 +79,21 @@ function section(heading, items) {
 
     items.forEach((item) => {
         const div = document.createElement("div");
+        div.classList.add("menu-item");
 
         const name = document.createElement("h3");
         name.textContent = item.name;
-        name.classList.add("section-heading");
+        name.classList.add("menu-item-heading");
         div.appendChild(name);
 
         const desc = document.createElement("p");
         desc.textContent = item.desc;
-        desc.classList.add("section-text");
+        desc.classList.add("menu-item-text");
         div.appendChild(desc);
 
         const price = document.createElement("p");
         price.textContent = item.price;
-        price.classList.add("section-text");
+        price.classList.add("menu-item-text");
         div.appendChild(price);
 
         section.appendChild(div);

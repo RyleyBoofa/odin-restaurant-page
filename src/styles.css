@@ -34,8 +34,7 @@ body {
 }
 
 h1,
-h2,
-h3 {
+h2 {
     font-family: var(--font-special-elite);
 }
 
@@ -79,7 +78,14 @@ nav {
 .page-heading,
 .section-heading {
     color: var(--color-white);
-    margin: 0.5em auto;
+}
+
+.page-heading {
+    margin: 1em auto;
+}
+
+.section-heading {
+    margin-bottom: 0.25em;
 }
 
 .section-text {
@@ -108,4 +114,47 @@ img {
     color: var(--color-white);
     background-color: var(--color-shadow);
     border-radius: 0.5em;
+}
+
+/* MENU */
+
+.menu-section {
+    border-top: 1px solid var(--color-pink);
+    padding: 1em;
+}
+
+.menu-section:last-child {
+    border-bottom: 1px solid var(--color-pink);
+}
+
+.menu-item {
+    margin: 1em;
+}
+
+.menu-item-heading,
+.menu-item-text {
+    margin-bottom: 0.25em;
+}
+
+.menu-item-heading {
+    color: var(--color-white);
+}
+
+.menu-item-text {
+    color: var(--color-grey-light);
+}
+
+/* ABOUT */
+
+.about-section {
+    margin-bottom: 2em;
+}
+
+.about-section-heading {
+    font-family: var(--font-chelsea-market);
+}
+
+.about-contact-info {
+    color: var(--color-grey-light);
+    margin-bottom: 0.25em;
 }
