@@ -1,3 +1,5 @@
+import { createElement, createPageContainer } from "./util.js";
+
 const pageHeading = "About Us";
 
 const aboutHeading = "The last stop before the end of the line";
@@ -24,13 +26,7 @@ const contactItems = [
 ];
 
 export function aboutPage() {
-    const container = document.createElement("div");
-    container.classList.add("container");
-
-    const h1 = document.createElement("h1");
-    h1.textContent = pageHeading;
-    h1.classList.add("page-heading");
-    container.appendChild(h1);
+    const container = createPageContainer(pageHeading);
 
     container.appendChild(section(aboutHeading, aboutItems));
 
@@ -40,44 +36,52 @@ export function aboutPage() {
 }
 
 function section(heading, items) {
-    const section = document.createElement("section");
-    section.classList.add("about-section");
+    const section = createElement("section", { classes: ["about-section"] });
 
-    const h2 = document.createElement("h2");
-    h2.textContent = heading;
-    h2.classList.add("section-heading");
-    h2.classList.add("about-section-heading");
-    section.appendChild(h2);
+    section.appendChild(
+        createElement("h2", {
+            text: heading,
+            classes: ["section-heading", "about-section-heading"],
+        })
+    );
 
     items.forEach((item) => {
-        const div = document.createElement("div");
+        const div = createElement("div", { classes: ["about-item"] });
 
         if (item.name) {
-            const name = document.createElement("h3");
-            name.textContent = item.name;
-            name.classList.add("section-heading");
-            div.appendChild(name);
+            div.appendChild(
+                createElement("h3", {
+                    text: item.name,
+                    classes: ["section-heading"],
+                })
+            );
         }
 
         if (item.p1) {
-            const p1 = document.createElement("p");
-            p1.textContent = item.p1;
-            p1.classList.add("about-contact-info");
-            div.appendChild(p1);
+            div.appendChild(
+                createElement("p", {
+                    text: item.p1,
+                    classes: ["about-contact-info"],
+                })
+            );
         }
 
         if (item.p2) {
-            const p2 = document.createElement("p");
-            p2.textContent = item.p2;
-            p2.classList.add("about-contact-info");
-            div.appendChild(p2);
+            div.appendChild(
+                createElement("p", {
+                    text: item.p2,
+                    classes: ["about-contact-info"],
+                })
+            );
         }
 
         if (item.p3) {
-            const p3 = document.createElement("p");
-            p3.textContent = item.p3;
-            p3.classList.add("about-contact-info");
-            div.appendChild(p3);
+            div.appendChild(
+                createElement("p", {
+                    text: item.p3,
+                    classes: ["about-contact-info"],
+                })
+            );
         }
 
         section.appendChild(div);

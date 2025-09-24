@@ -3,17 +3,17 @@ import { homePage } from "./home.js";
 import { menuPage } from "./menu.js";
 import { aboutPage } from "./about.js";
 
-const homeBtn = document.querySelector("#home");
-const menuBtn = document.querySelector("#menu");
-const aboutBtn = document.querySelector("#about");
+const nav = document.querySelector("nav");
 const content = document.querySelector("#content");
+const pages = { home: homePage, menu: menuPage, about: aboutPage };
 
-homeBtn.addEventListener("click", () => loadPage(homePage));
-menuBtn.addEventListener("click", () => loadPage(menuPage));
-aboutBtn.addEventListener("click", () => loadPage(aboutPage));
+nav.addEventListener("click", (e) => {
+    const page = e.target.dataset.page;
+    if (page && pages[page]) loadPage(pages[page]);
+});
 
 function loadPage(page) {
-    Array.from(content.children).forEach((element) => element.remove());
+    content.innerHTML = "";
     content.appendChild(page());
 }
 

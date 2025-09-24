@@ -14,34 +14,67 @@
 :root {
     --font-special-elite: "Special Elite", system-ui;
     --font-chelsea-market: "Chelsea Market", system-ui;
+
+    --font-size-xs: clamp(0.75rem, 0.6rem + 0.3vw, 0.9rem);
+    --font-size-sm: clamp(0.9rem, 0.75rem + 0.4vw, 1.1rem);
+    --font-size-md: clamp(1.1rem, 0.9rem + 0.5vw, 1.4rem);
+    --font-size-lg: clamp(1.4rem, 1.1rem + 0.7vw, 1.8rem);
+    --font-size-xl: clamp(1.8rem, 1.4rem + 1vw, 2.4rem);
     
     --color-grey-dark: #2d2d2d;
-    --color-purple: #2e003e;
     --color-black: #1a1a1a;
     --color-pink: #f04a92;
     --color-turqoise: #00f6f6;
-    --color-green: #39f57c;
     --color-grey-light: #c0c0c0;
     --color-white: #d1d1d1;
-    --color-amber: #ffb300;
     --color-shadow: #0006;
 }
 
+html,
 body {
-    font-family: var(--font-chelsea-market);
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
     font-size: 20px;
+    font-family: var(--font-chelsea-market);
     background-color: var(--color-grey-dark);
 }
 
+main {
+    flex: 1;
+}
+
 h1,
-h2 {
+h2,
+h3
+ {
     font-family: var(--font-special-elite);
+    color: var(--color-white);
+    margin: 1em auto;
+}
+
+p,
+a {
+    color: var(--color-grey-light);
 }
 
 .container {
     max-width: 75ch;
     margin: 0 auto;
     padding: 1em;
+}
+
+.page-heading,
+.header-text {
+    font-size: var(--font-size-xl);
+}
+
+.section-heading {
+    font-size: var(--font-size-lg);
+    margin-bottom: 0.25em;
 }
 
 /* HEADER */
@@ -53,47 +86,37 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-evenly;
     gap: 1em;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
-    color: var(--color-turqoise);
-    text-shadow: 2px 2px 2px var(--color-pink);
+    flex-wrap: wrap;
 }
 
-.nav-btn {
+.header-text {
+    color: var(--color-turqoise);
+    text-shadow: 2px 2px 2px var(--color-pink);
+    margin: 0;
+}
+
+.btn {
     background-color: var(--color-grey-dark);
     border-color: var(--color-turqoise);
     color: var(--color-grey-light);
     font: inherit;
+    font-size: var(--font-size-md);
     padding: 0.25em 1em;
     box-shadow: 2px 2px 2px var(--color-pink);
 }
 
-/* BODY */
+/* HOME */
 
-.page-heading,
-.section-heading {
-    color: var(--color-white);
+.home-page-text {
+    font-size: var(--font-size-md);
+    margin-bottom: 2em;
 }
-
-.page-heading {
-    margin: 1em auto;
-}
-
-.section-heading {
-    margin-bottom: 0.25em;
-}
-
-.section-text {
-    color: var(--color-grey-light);
-    margin-bottom: 1em;
-}
-
-/* IMAGES */
 
 img {
     width: 100%;
@@ -114,47 +137,46 @@ img {
     color: var(--color-white);
     background-color: var(--color-shadow);
     border-radius: 0.5em;
+    font-size: var(--font-size-sm);
 }
 
-/* MENU */
+/* MENU / ABOUT */
 
-.menu-section {
+.menu-section,
+.about-section {
     border-top: 1px solid var(--color-pink);
     padding: 1em;
 }
 
-.menu-section:last-child {
+.menu-section:last-child,
+.about-section:last-child {
     border-bottom: 1px solid var(--color-pink);
 }
 
-.menu-item {
+.menu-item,
+.about-item {
     margin: 1em;
 }
 
 .menu-item-heading,
-.menu-item-text {
+.menu-item-text,
+.about-contact-info {
+    font-size: var(--font-size-md);
     margin-bottom: 0.25em;
 }
 
 .menu-item-heading {
-    color: var(--color-white);
+    font-size: var(--font-size-lg);
 }
 
-.menu-item-text {
-    color: var(--color-grey-light);
+/* FOOTER */
+
+footer {
+    background-color: var(--color-black);
+    border-top: 2px solid var(--color-pink);
+    text-align: center;
 }
 
-/* ABOUT */
-
-.about-section {
-    margin-bottom: 2em;
-}
-
-.about-section-heading {
-    font-family: var(--font-chelsea-market);
-}
-
-.about-contact-info {
-    color: var(--color-grey-light);
-    margin-bottom: 0.25em;
+.footer {
+    font-size: var(--font-size-sm);
 }

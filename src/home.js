@@ -1,3 +1,5 @@
+import { createPageContainer, createElement } from "./util.js";
+
 const pageHeading = "Open 24 Hours";
 
 const sectionHeading = "Surving the Apocalype, One Meal at a Time";
@@ -12,13 +14,7 @@ const imgAttribHref =
 const imgAttribName = "r/DerpyBox";
 
 export function homePage() {
-    const container = document.createElement("div");
-    container.classList.add("container");
-
-    const h1 = document.createElement("h1");
-    h1.textContent = pageHeading;
-    h1.classList.add("page-heading");
-    container.appendChild(h1);
+    const container = createPageContainer(pageHeading);
 
     container.appendChild(section());
 
@@ -26,17 +22,21 @@ export function homePage() {
 }
 
 function section() {
-    const section = document.createElement("section");
+    const section = createElement("section");
 
-    const h2 = document.createElement("h2");
-    h2.textContent = sectionHeading;
-    h2.classList.add("section-heading");
-    section.appendChild(h2);
+    section.appendChild(
+        createElement("h2", {
+            text: sectionHeading,
+            classes: ["section-heading"],
+        })
+    );
 
-    const p = document.createElement("p");
-    p.textContent = sectionText;
-    p.classList.add("section-text");
-    section.appendChild(p);
+    section.appendChild(
+        createElement("p", {
+            text: sectionText,
+            classes: ["home-page-text"],
+        })
+    );
 
     section.appendChild(image());
 
@@ -44,19 +44,28 @@ function section() {
 }
 
 function image() {
-    const imgContainer = document.createElement("div");
-    imgContainer.classList.add("img-container");
+    const imgContainer = createElement("div", {
+        classes: ["img-container"],
+    });
 
-    const img = document.createElement("img");
-    img.src = imgSrc;
-    img.alt = imgAlt;
-    imgContainer.appendChild(img);
+    imgContainer.appendChild(
+        createElement("img", {
+            attrs: {
+                src: imgSrc,
+                alt: imgAlt,
+            },
+        })
+    );
 
-    const a = document.createElement("a");
-    a.textContent = imgAttribName;
-    a.href = imgAttribHref;
-    a.classList.add("img-attrib");
-    imgContainer.appendChild(a);
+    imgContainer.appendChild(
+        createElement("a", {
+            text: imgAttribName,
+            classes: ["img-attrib"],
+            attrs: {
+                href: imgAttribHref,
+            },
+        })
+    );
 
     return imgContainer;
 }

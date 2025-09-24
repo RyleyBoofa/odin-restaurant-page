@@ -1,3 +1,5 @@
+import { createElement, createPageContainer } from "./util.js";
+
 const pageHeading = "Our Menu";
 
 const startersHeading = "Starters";
@@ -51,13 +53,7 @@ const drinkItems = [
 ];
 
 export function menuPage() {
-    const container = document.createElement("div");
-    container.classList.add("container");
-
-    const h1 = document.createElement("h1");
-    h1.textContent = pageHeading;
-    h1.classList.add("page-heading");
-    container.appendChild(h1);
+    const container = createPageContainer(pageHeading);
 
     container.appendChild(section(startersHeading, starterItems));
 
@@ -69,32 +65,38 @@ export function menuPage() {
 }
 
 function section(heading, items) {
-    const section = document.createElement("section");
-    section.classList.add("menu-section");
+    const section = createElement("section", { classes: ["menu-section"] });
 
-    const h2 = document.createElement("h2");
-    h2.textContent = heading;
-    h2.classList.add("section-heading");
-    section.appendChild(h2);
+    section.appendChild(
+        createElement("h2", {
+            text: heading,
+            classes: ["section-heading"],
+        })
+    );
 
     items.forEach((item) => {
-        const div = document.createElement("div");
-        div.classList.add("menu-item");
+        const div = createElement("div", { classes: ["menu-item"] });
 
-        const name = document.createElement("h3");
-        name.textContent = item.name;
-        name.classList.add("menu-item-heading");
-        div.appendChild(name);
+        div.appendChild(
+            createElement("h3", {
+                text: item.name,
+                classes: ["menu-item-heading"],
+            })
+        );
 
-        const desc = document.createElement("p");
-        desc.textContent = item.desc;
-        desc.classList.add("menu-item-text");
-        div.appendChild(desc);
+        div.appendChild(
+            createElement("p", {
+                text: item.desc,
+                classes: ["menu-item-text"],
+            })
+        );
 
-        const price = document.createElement("p");
-        price.textContent = item.price;
-        price.classList.add("menu-item-text");
-        div.appendChild(price);
+        div.appendChild(
+            createElement("p", {
+                text: item.price,
+                classes: ["menu-item-text"],
+            })
+        );
 
         section.appendChild(div);
     });
