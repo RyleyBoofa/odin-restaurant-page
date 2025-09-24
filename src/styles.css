@@ -188,20 +188,20 @@ img {
 
 /* MENU / ABOUT */
 
-.sub-section {
+.section {
     border-top: 1px solid var(--color-pink);
     padding: 1em;
 }
 
-.sub-section:last-child {
+.section:last-child {
     border-bottom: 1px solid var(--color-pink);
 }
 
-.sub-section-item {
+.section-item {
     margin: 1em;
 }
 
-.sub-section-text {
+.section-text {
     font-size: var(--font-size-md);
     margin-bottom: 0.25em;
 }

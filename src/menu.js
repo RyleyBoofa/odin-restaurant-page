@@ -65,7 +65,7 @@ export function menuPage() {
 }
 
 function section(heading, items) {
-    const section = createElement("section", { classes: ["sub-section"] });
+    const section = createElement("section", { classes: ["section"] });
 
     section.appendChild(
         createElement("h2", {
@@ -75,7 +75,7 @@ function section(heading, items) {
     );
 
     items.forEach((item) => {
-        const div = createElement("div", { classes: ["sub-section-item"] });
+        const div = createElement("div", { classes: ["section-item"] });
 
         div.appendChild(
             createElement("h3", {
@@ -87,14 +87,14 @@ function section(heading, items) {
         div.appendChild(
             createElement("p", {
                 text: item.desc,
-                classes: ["sub-section-text"],
+                classes: ["section-text"],
             })
         );
 
         div.appendChild(
             createElement("p", {
                 text: item.price,
-                classes: ["sub-section-text"],
+                classes: ["section-text"],
             })
         );
 
