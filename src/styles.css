@@ -188,31 +188,22 @@ img {
 
 /* MENU / ABOUT */
 
-.menu-section,
-.about-section {
+.sub-section {
     border-top: 1px solid var(--color-pink);
     padding: 1em;
 }
 
-.menu-section:last-child,
-.about-section:last-child {
+.sub-section:last-child {
     border-bottom: 1px solid var(--color-pink);
 }
 
-.menu-item,
-.about-item {
+.sub-section-item {
     margin: 1em;
 }
 
-.menu-item-heading,
-.menu-item-text,
-.about-contact-info {
+.sub-section-text {
     font-size: var(--font-size-md);
     margin-bottom: 0.25em;
-}
-
-.menu-item-heading {
-    font-size: var(--font-size-lg);
 }
 
 /* FOOTER */

@@ -36,7 +36,7 @@ export function aboutPage() {
 }
 
 function section(heading, items) {
-    const section = createElement("section", { classes: ["about-section"] });
+    const section = createElement("section", { classes: ["sub-section"] });
 
     section.appendChild(
         createElement("h2", {
@@ -46,7 +46,7 @@ function section(heading, items) {
     );
 
     items.forEach((item) => {
-        const div = createElement("div", { classes: ["about-item"] });
+        const div = createElement("div", { classes: ["sub-section-item"] });
 
         if (item.name) {
             div.appendChild(
@@ -61,7 +61,7 @@ function section(heading, items) {
             div.appendChild(
                 createElement("p", {
                     text: item.p1,
-                    classes: ["about-contact-info"],
+                    classes: ["sub-section-text"],
                 })
             );
         }
@@ -70,7 +70,7 @@ function section(heading, items) {
             div.appendChild(
                 createElement("p", {
                     text: item.p2,
-                    classes: ["about-contact-info"],
+                    classes: ["sub-section-text"],
                 })
             );
         }
@@ -79,7 +79,7 @@ function section(heading, items) {
             div.appendChild(
                 createElement("p", {
                     text: item.p3,
-                    classes: ["about-contact-info"],
+                    classes: ["sub-section-text"],
                 })
             );
         }
